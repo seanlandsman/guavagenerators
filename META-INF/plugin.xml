@@ -4,16 +4,9 @@
     <version>1.0</version>
     <vendor email="sean@thelandsmans.com" url="http://www.seanlandsman.com">Sean Landsman</vendor>
 
-    <description><![CDATA[
-Enter short description for your plugin here.<br>
-<small>most HTML tags may be used</small>
-]]></description>
+    <description><![CDATA[Generates equals and hashCode, as well as toString, utilising the Guava libraries]]></description>
 
-    <change-notes><![CDATA[
-Add change notes here.<br>
-<small>most HTML tags may be used</small>
-]]>
-    </change-notes>
+    <change-notes><![CDATA[]]></change-notes>
 
     <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
     <idea-version since-build="107.105"/>
