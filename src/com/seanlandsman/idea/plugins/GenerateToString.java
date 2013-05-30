@@ -23,9 +23,9 @@ public class GenerateToString extends GuavaUtilityGeneration {
     private void generateToString(PsiClass psiClass, List<PsiField> fields) {
         StringBuilder builder = new StringBuilder("@Override\n");
         builder.append("public String toString() { \n");
-        builder.append("return ").append(COM_GOOGLE_COMMON_BASE_OBJECTS).append(".toStringHelper(this)");
+        builder.append("return ").append(COM_GOOGLE_COMMON_BASE_OBJECTS).append(".toStringHelper(this)").append(System.getProperty("line.separator"));
         for (PsiField field : fields) {
-            builder.append(".addValue(").append(field.getName()).append(")");
+            builder.append(".addValue(").append(field.getName()).append(")").append(System.getProperty("line.separator"));
         }
         builder.append(".toString();\n}");
         setNewMethod(psiClass, builder.toString(), "toString");
