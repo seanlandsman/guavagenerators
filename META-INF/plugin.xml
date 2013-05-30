@@ -1,4 +1,4 @@
-<idea-plugin version="2" url="https://github.com/seanlandsman/guavagenerators">
+<idea-plugin version="2" url="http://www.seanlandsman.com">
     <id>com.seanlandsman.idea.plugins.guavagenerators</id>
     <name>Guava equals, hashCode and toString generator</name>
     <version>1.0.1</version>
