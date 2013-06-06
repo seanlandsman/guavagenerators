@@ -1,10 +1,45 @@
 <idea-plugin version="2" url="http://www.seanlandsman.com">
     <id>com.seanlandsman.idea.plugins.guavagenerators</id>
     <name>Guava equals, hashCode and toString generator</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <vendor email="sean@thelandsmans.com" url="http://www.seanlandsman.com">Sean Landsman</vendor>
 
-    <description><![CDATA[Generates equals and hashCode, as well as toString, utilising the Guava libraries<br/>ALT+INSERT : equals & hashCode and toString options will be shown.]]></description>
+    <description><![CDATA[Generates equals and hashCode, as well as toString, utilising the Guava libraries<br/>ALT+INSERT : equals & hashCode and toString options will be shown.</p>
+    Given a class with the following fields:<br/>
+    <pre>
+    private int field1;<br/>
+    private String field2;<br/>
+    private long field3;<p/>
+    </pre>
+    The following methods would be generated:<p/>
+    <pre>
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TestHarness that = (TestHarness) o;
+
+        return Objects.equal(this.field1, that.field1) &&
+                Objects.equal(this.field2, that.field2) &&
+                Objects.equal(this.field3, that.field3);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(field1, field2, field3);
+    }
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this)
+                .addValue(field1)
+                .addValue(field2)
+                .addValue(field3)
+                .toString();
+    }
+    </pre>
+    ]]></description>
 
     <change-notes><![CDATA[]]></change-notes>
 
