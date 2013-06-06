@@ -34,7 +34,7 @@ public class GenerateEqualsAndHashCode extends GuavaUtilityGeneration {
             builder.append(COM_GOOGLE_COMMON_BASE_OBJECTS).append(".equal(this.").append(field.getName()).append(", that.");
             builder.append(field.getName()).append(")");
             if (i < fields.size() - 1) {
-                builder.append(" &&").append(System.getProperty("line.separator"));
+                builder.append(" &&\n");
             }
         }
         builder.append(";\n}");
@@ -51,7 +51,7 @@ public class GenerateEqualsAndHashCode extends GuavaUtilityGeneration {
             if (i < fields.size() - 1) {
                 builder.append(",");
                 if (fields.size() > 5 && i > 0 && i % 5 == 0) {
-                    builder.append(System.getProperty("line.separator"));
+                    builder.append("\n");
                 }
             }
         }
