@@ -4,41 +4,37 @@
     <version>1.0.2</version>
     <vendor email="sean@thelandsmans.com" url="http://www.seanlandsman.com">Sean Landsman</vendor>
 
-    <description><![CDATA[Generates equals and hashCode, as well as toString, utilising the Guava libraries<br/>ALT+INSERT : equals & hashCode and toString options will be shown.</p>
-    Given a class with the following fields:<br/>
-    <pre>
-    private int field1;<br/>
-    private String field2;<br/>
-    private long field3;<p/>
-    </pre>
-    The following methods would be generated:<p/>
-    <pre>
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    <description><![CDATA[Generates equals and hashCode, as well as toString, utilising the Guava libraries<br/>ALT+INSERT : equals & hashCode and toString options will be shown.<p/>
+Given a class with the following fields:<br/>
+private int field1;<br/>
+private String field2;<br/>
+private long field3;<p/>
+The following methods would be generated:<p/>
+@Override<br/>
+public boolean equals(Object o) {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;if (this == o) return true;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;if (o == null || getClass() != o.getClass()) return false;<p/>
 
-        TestHarness that = (TestHarness) o;
+&nbsp;&nbsp;&nbsp;&nbsp;TestHarness that = (TestHarness) o;<p/>
 
-        return Objects.equal(this.field1, that.field1) &&
-                Objects.equal(this.field2, that.field2) &&
-                Objects.equal(this.field3, that.field3);
-    }
+&nbsp;&nbsp;&nbsp;&nbsp;return Objects.equal(this.field1, that.field1) &&<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Objects.equal(this.field2, that.field2) &&<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Objects.equal(this.field3, that.field3);<br/>
+}<p/>
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(field1, field2, field3);
-    }
+@Override<br/>
+public int hashCode() {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;return Objects.hashCode(field1, field2, field3);<br/>
+}<p/>
 
-    @Override
-    public String toString() {
-        return Objects.toStringHelper(this)
-                .addValue(field1)
-                .addValue(field2)
-                .addValue(field3)
-                .toString();
-    }
-    </pre>
+@Override<br/>
+public String toString() {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;return Objects.toStringHelper(this)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addValue(field1)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addValue(field2)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addValue(field3)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.toString();<br/>
+}<br/>
     ]]></description>
 
     <change-notes><![CDATA[]]></change-notes>
