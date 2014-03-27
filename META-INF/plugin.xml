@@ -1,7 +1,7 @@
 <idea-plugin version="2" url="http://www.seanlandsman.com">
     <id>com.seanlandsman.idea.plugins.guavagenerators</id>
     <name>Guava equals, hashCode and toString generator</name>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <vendor email="sean@thelandsmans.com" url="http://www.seanlandsman.com">Sean Landsman</vendor>
 
     <description><![CDATA[Generates equals and hashCode, as well as toString, utilising the Guava libraries<br/>ALT+INSERT : equals & hashCode and toString options will be shown.<p/>
@@ -30,9 +30,9 @@ public int hashCode() {<br/>
 @Override<br/>
 public String toString() {<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;return Objects.toStringHelper(this)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addValue(field1)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addValue(field2)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addValue(field3)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.add("field1", field1)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.add("field2", field2)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.add("field3", field3)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.toString();<br/>
 }<br/>
     ]]></description>
