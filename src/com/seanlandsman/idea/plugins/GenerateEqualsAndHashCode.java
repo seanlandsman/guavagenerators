@@ -22,6 +22,13 @@ public class GenerateEqualsAndHashCode extends GuavaUtilityGeneration {
     }
 
     private void generateEquals(PsiClass psiClass, List<PsiField> fields) {
+        String method;
+
+        if (hasJavaUtilObjects)
+            method = JAVA_UTIL_OBJECTS + ".equals";
+        else
+            method = COM_GOOGLE_COMMON_BASE_OBJECTS + ".equal";
+
         StringBuilder builder = new StringBuilder("@Override\n");
         builder.append("public boolean equals(Object o) { \n");
         builder.append("if (this == o) return true;\n");
@@ -31,8 +38,12 @@ public class GenerateEqualsAndHashCode extends GuavaUtilityGeneration {
         builder.append("return ");
         for (int i = 0; i < fields.size(); i++) {
             PsiField field = fields.get(i);
-            builder.append(COM_GOOGLE_COMMON_BASE_OBJECTS).append(".equal(this.").append(field.getName()).append(", that.");
-            builder.append(field.getName()).append(")");
+            builder.append(method)
+                    .append("(this.")
+                    .append(field.getName())
+                    .append(", that.")
+                    .append(field.getName())
+                    .append(")");
             if (i < fields.size() - 1) {
                 builder.append(" &&\n");
             }
@@ -44,7 +55,14 @@ public class GenerateEqualsAndHashCode extends GuavaUtilityGeneration {
     private void generateHashCode(PsiClass psiClass, List<PsiField> fields) {
         StringBuilder builder = new StringBuilder("@Override\n");
         builder.append("public int hashCode() { \n");
-        builder.append("return ").append(COM_GOOGLE_COMMON_BASE_OBJECTS).append(".hashCode(");
+        builder.append("return ");
+
+        if (hasJavaUtilObjects)
+            builder.append(JAVA_UTIL_OBJECTS).append(".hash");
+        else
+            builder.append(COM_GOOGLE_COMMON_BASE_OBJECTS).append(".hashCode");
+
+        builder.append("(");
         for (int i = 0; i < fields.size(); i++) {
             PsiField field = fields.get(i);
             builder.append(field.getName());
