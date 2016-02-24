@@ -1,12 +1,10 @@
 
-#IDEA Plugin Guava 
+#IDEA Plugin Guava
 
 ## Guava Generators
 
 
-___
-
-This is an IDEA plugins to generate equals, hashCode and toString using Guava utilities.
+This is an IDEA(IntelliJ) plugins to generate equals, hashCode and toString using Guava utilities.
 
 Based on the "Live Coding a Plugin From Scratch" webinar, which can be found here:[Jet Brains Blog]( http://blogs.jetbrains.com/idea/2012/12/webinar-recording-live-coding-a-plugin-from-scratch/)
 
@@ -52,7 +50,7 @@ ToString:
     }
 ```
 
-__
+___
 
 ###Dependences
 
