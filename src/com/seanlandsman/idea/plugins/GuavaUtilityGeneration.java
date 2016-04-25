@@ -19,6 +19,7 @@ import java.util.List;
 
 public abstract class GuavaUtilityGeneration extends AnAction {
     public static final String COM_GOOGLE_COMMON_BASE_OBJECTS = "com.google.common.base.Objects";
+    public static final String COM_GOOGLE_COMMON_BASE_MORE_OBJECTS = "com.google.common.base.MoreObjects";
     public static final String JAVA_UTIL_OBJECTS = "java.util.Objects";
     public static final LanguageLevel JAVA_UTIL_OBJECTS_VERSION = LanguageLevel.JDK_1_7;
     protected boolean hasJavaUtilObjects = false;
