@@ -4,9 +4,9 @@
 ## Guava Generators
 
 
-This is an IDEA(IntelliJ) plugins to generate equals, hashCode and toString using Guava utilities.
+This is an IDEA(IntelliJ) plugin to generate equals, hashCode and toString using Guava utilities.
 
-Based on the "Live Coding a Plugin From Scratch" webinar, which can be found here:[Jet Brains Blog]( http://blogs.jetbrains.com/idea/2012/12/webinar-recording-live-coding-a-plugin-from-scratch/)
+Based on the "Live Coding a Plugin From Scratch" webinar, which can be found here: [Jet Brains Blog]( http://blogs.jetbrains.com/idea/2012/12/webinar-recording-live-coding-a-plugin-from-scratch/)
 
 ___ 
 
@@ -52,24 +52,24 @@ ToString:
 
 ___
 
-###Dependences
+### Dependencies
 
-To use this plugin it will be needed to be add into your pom or grandle file the guava jar,  as the examples shows:
+To use this plugin you need to add into your pom or grandle file the guava jar,  as shown at the example:
 
- Maven:
+Maven:
 ```xml
 <dependency>
-	<groupId>com.google.guava</groupId>
-	<artifactId>guava</artifactId>
-	<version>19.0</version>
+  <groupId>com.google.guava</groupId>
+  <artifactId>guava</artifactId>
+  <version>19.0</version>
 </dependency>
 ```
 
 Gradle:
 ```groovy
-com.google.guava:guava:19.0'
+com.google.guava:guava:19.0
 ```
-**OBS:** The guava version may change when the guava team release it a new one.
+**OBS:** The guava version may change when the guava team releases a new one.
 
 
 
